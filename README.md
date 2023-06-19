@@ -48,5 +48,6 @@ When you're done with the infrastructure, you can destroy it by running:
 ```shell
 terraform destroy
 ```
+Note: If s3 bucket creation is talking more time than its becuase I might have tried that bucket name while testing, increase the project_name=netflix2 to next version (example netflix3).
 
 Thank you :) 
