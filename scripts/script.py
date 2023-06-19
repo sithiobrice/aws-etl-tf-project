@@ -20,7 +20,7 @@ job = Job(glueContext)
 job.init(args['JOB_NAME'], args)
 
 # Data source from the glue catalog
-datasource0 = glueContext.create_dynamic_frame.from_catalog(database = "netflix-default-movies-database", table_name = "netflix_movies")
+datasource0 = glueContext.create_dynamic_frame.from_catalog(database = "netflix2-default-movies-database", table_name = "netflix_movies")
 
 # Convert DynamicFrame to DataFrame for more flexible manipulation
 df = datasource0.toDF()
@@ -48,7 +48,7 @@ dynamic_frame_write = DynamicFrame.fromDF(df, glueContext, "dynamic_frame_write"
 print("Inserting into DynamoDB successfully!!")
 glueContext.write_dynamic_frame.from_options(frame = dynamic_frame_write,
                                              connection_type = "dynamodb",
-                                             connection_options = {"dynamodb.output.tableName": "netflix-default-movies-table"})
+                                             connection_options = {"dynamodb.output.tableName": "netflix2-default-movies-table"})
 
 
 print("Inserted into DynamoDB successfully!!")

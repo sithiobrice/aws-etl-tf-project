@@ -1,5 +1,5 @@
 locals {
-  project_name = "netflix"
+  project_name = "netflix2"
   tags = {
     Owner   = "Netflix Devops Team"
     Creator = "team-devops@netflix.com"

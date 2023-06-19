@@ -33,9 +33,9 @@ module "glue" {
   catalog_db = "movies-database"
   iam_role_arn = module.iam.iam_role_arn
   glue_crawler_name = "movies-crawler"
-  s3_data_source_target_path = "s3://netflix-${terraform.workspace}-datasource-movies/data-sources/netflix-movies/"
+  s3_data_source_target_path = "s3://${local.project_name}-${terraform.workspace}-datasource-movies/data-sources/netflix-movies/"
   glue_job_name = "movie-job"
-  s3_script_location_path = "s3://netflix-${terraform.workspace}-datasource-movies/scripts/script.py"
-  s3_temp_location_path = "s3://netflix-${terraform.workspace}-datasource-movies/temp-dir/"
+  s3_script_location_path = "s3://${local.project_name}-${terraform.workspace}-datasource-movies/scripts/script.py"
+  s3_temp_location_path = "s3://${local.project_name}-${terraform.workspace}-datasource-movies/temp-dir/"
   common_tags = local.tags
 }
